@@ -47,18 +47,39 @@
     text-decoration: none;
     text-transform: capitalize;
   }
+  .interest-button {
+    color:#ffffff;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #756257;
+  }
   
-  .main-index {
+  .welcome-part {
     background-image: url("../images/views/index-background.jpg"), url("../images/logos/divider.svg");
     background-size: 100% auto, 100% auto;
     background-repeat: no-repeat, no-repeat;
     background-position: top, bottom;
   }
-  
-  .advantages-list {
+  .main-index {
     text-align: center;
   }
-  
+
+  .main-title {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;  
+    text-transform: uppercase;
+     
+  }
+  .main-intro {
+    font-size: 22px;
+    line-height: 36px;
+  }
+
+    
   .advantages-title,
   .advantages-subtitle {
     font-size: 24px;
@@ -72,9 +93,10 @@
     color: #ffffff;
     background: #83B3D3;
   }
-  
   .advantages-subitem-1,
-  .advantages-subitem-3,
+  .advantages-subitem-3{
+    background-color: rgba(131, 179, 211, 0.12);
+  }   
   .advantages-item-3,
   .advantages-item-5 {
     background: rgba(131, 179, 211, 0.12);
@@ -84,16 +106,18 @@
     background: rgba(131, 179, 211, 0.2);
   }
   
-  .favour {
+  .favour-description {
     font-size: 22px;
     line-height: 26px;
   }
-  
-  .favour-title {
-    font-weight: 700;
-    font-size: 30px;
-    line-height: 36px;
+  .favour-catalog-link {
+    color:#ffffff;
+    text-decoration: none;
+    font-size: 40px;
+    line-height: 40px;
+    text-align: center;
     text-transform: uppercase;
+    background: #756257;
   }
   
   .newsletter {
@@ -102,13 +126,33 @@
     background-image: url("../images/views/background.jpg");
     background-size: 100% auto;
     background-repeat: no-repeat;
-    font-size: 30px;
-    line-height: 36px;
+    font-size: 22px;
+    line-height: 26px;
+    text-align:center;
   }
   
-  .newsletter-title {
+  .newsletter-title,
+  .favour-title {
     font-weight: 700;
     font-size: 30px;
     line-height: 36px;
     text-transform: uppercase;
+  }
+  .newsletter-button {
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 26px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #83B3D3;
+  }
+
+  .footer-contacts-phone {
+    color: #000000;
+    font-size: 40px;
+    line-height: 40px;
+    text-align: center;
+    text-transform: uppercase; 
+    text-decoration: none; 
   }
