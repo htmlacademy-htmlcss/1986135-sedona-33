@@ -1,0 +1,114 @@
+@font-face {
+    font-family: "PT Sans";
+    src: url("fonts/ptsans-400.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "PT Sans";
+    src: url("fonts/ptsans-700.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "PT Sans";
+    src: url("fonts/ptsans-400.woff2") format("woff2");
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "PT Sans";
+    src: url("fonts/ptsans-700.woff2") format("woff2");
+    font-style: italic;
+    font-weight: 700;
+    font-display: swap;
+  }
+  
+  body {
+    font-family: "PT Sans", sans-serif;
+    font-size: 18px;
+    line-height: 21px;
+    color: #000000;
+    background-color: #ffffff;
+  }
+  
+  .navigation-link {
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 700;
+    text-align: center;
+    color: inherit;
+    text-decoration: none;
+    text-transform: capitalize;
+  }
+  
+  .main-index {
+    background-image: url("../images/views/index-background.jpg"), url("../images/logos/divider.svg");
+    background-size: 100% auto, 100% auto;
+    background-repeat: no-repeat, no-repeat;
+    background-position: top, bottom;
+  }
+  
+  .advantages-list {
+    text-align: center;
+  }
+  
+  .advantages-title,
+  .advantages-subtitle {
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  /*в критериях написано про вложенности, а перечисления не запрещены, правильно?*/
+  .advantages-item-1,
+  .advantages-item-2 {
+    color: #ffffff;
+    background: #83B3D3;
+  }
+  
+  .advantages-subitem-1,
+  .advantages-subitem-3,
+  .advantages-item-3,
+  .advantages-item-5 {
+    background: rgba(131, 179, 211, 0.12);
+  }
+  
+  .advantages-item-4 {
+    background: rgba(131, 179, 211, 0.2);
+  }
+  
+  .favour {
+    font-size: 22px;
+    line-height: 26px;
+  }
+  
+  .favour-title {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+    text-transform: uppercase;
+  }
+  
+  .newsletter {
+    color: #ffffff;
+    
+    background-image: url("../images/views/background.jpg");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    font-size: 30px;
+    line-height: 36px;
+  }
+  
+  .newsletter-title {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+    text-transform: uppercase;
+  }
