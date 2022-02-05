@@ -36,10 +36,8 @@ html{
   
 body {
   margin: 0;
-  
-  
   min-height: 100%;
-  font-family: "PT Sans", sans-serif;
+  font-family: "PT Sans", Arial, sans-serif;
   font-size: 18px;
   line-height: 21px;
   color: #000000;
@@ -214,8 +212,8 @@ body {
 
 .page-footer-container {
   display: flex;
-  margin: 0 auto;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
   background-color: aquamarine;
 }
 
@@ -229,7 +227,8 @@ body {
 }
 
 .htmlacademy-link {
-  margin-left: auto;
+  width: 115px;
+  
 }
 
 .footer-contacts-phone {
@@ -256,7 +255,13 @@ body {
   font-size: 60px;
   line-height: 78px;
   text-transform: capitalize;
+  /*text-align: left;*/
   color: #ffffff;
+}
+
+.inner-header {
+  display: block;
+  margin: 35px 601px 71px 71px;
 }
 
 .breadcrumps-link {
@@ -289,6 +294,14 @@ body {
 .button-likes{
   background: #7DB54F;
 }
+
+.catalog-filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; 
+}
+
+
 
 .search-results{
   font-size: 18px;
@@ -348,3 +361,4 @@ body {
   background: #ffffff;
 }
 
+/*каталог получается один большой колончатый флекс с микросетками внутри...так ведь? */
