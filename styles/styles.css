@@ -240,7 +240,7 @@ body {
   margin-bottom: 30px;
 }
 
-/* 2.ну а тут тексты, на макете слова выстроены по-другому. хотелось бы одним свойством их подогнать*/
+/* ну а тут тексты, на макете слова выстроены по-другому. хотелось бы одним свойством их подогнать.ширина не помогла*/
 .advantages-description {
   margin: 0 90px 87px;
   max-width: 250px;
@@ -271,13 +271,6 @@ body {
 .advantages-title:nth-child(4) {
   margin: 0 75px 20px;
 }
-
-/*.advantages-description:nth-child(2),
-.advantages-description:nth-child(3),
-.advantages-description:nth-child(4) {
-  margin: 0 75px 79px;
-}*/
-
 
 .advantages-item:first-child,
 .advantages-item:nth-child(7) {
@@ -417,32 +410,37 @@ body {
 
 .page-footer-container {
   display: flex;
-  width: 1200px;
+  width: 1056px;
   margin: 0 auto;
+  padding: 40px 0 30px 0;
+  justify-content: space-between;
 
 }
 /* тут чтобы сработал спейс битвин, пришлось убрать max-width*/
 .footer-social-list {
   display: flex;
   flex-wrap: wrap;
-  width: 107px;
+  width: 126px;
   margin: 0;
   padding: 0;
   list-style-type: none;
   justify-content: space-between;
 }
 
-.footer-social {
-  
-  margin: 48px 61px 52px 72px;
-}
-
 .footer-social-link {
   display: block;
-  width: 20px;
-  height: 20px;
- 
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
 
+.footer-social-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
 }
 
 .footer-social-tw,
@@ -466,11 +464,8 @@ body {
 
 .footer-contacts {
   width: 720px;
-  margin: 40px 53px 30px 0;
-}
-
-.htmlacademy-link-image {
-  margin: 42px 72px 44px 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .htmlacademy-link {
@@ -488,6 +483,7 @@ body {
 }
 
 .footer-contacts-phone {
+  display: block;
   color: #000000;
   font-size: 40px;
   line-height: 40px;
@@ -538,10 +534,53 @@ body {
 }
 
 .breadcrumps-link {
+  
   color: #ffffff;
   font-size: 16px;
-
   text-decoration: none;
+}
+
+.breadcrumps-link-home {
+  display: block;
+  width: 28px;
+  height: 27px;
+}
+
+.breadcrumps-item {
+  position: relative;
+  margin-right: 26px;
+}
+
+.breadcrumps-home {
+  fill: #ffffff;
+}
+
+.breadcrumps-item::after {
+  position: absolute;
+  top: 10px;
+  right: -11px;
+  width: 5px;
+  height: 8px;
+  background: url("../images/icons/nav-link-arrow.svg") no-repeat;
+  content: "";
+}
+
+.breadcrumps-item:last-child::after {
+  content: none;
+}
+
+.breadcrumps-link:hover {
+  opacity: 0.6;
+}
+
+.breadcrumps-link:focus {
+  outline: 3px solid #83b3d3;
+  border-radius: 4px;
+  color: #ffffff;
+}
+
+.breadcrumps-link:active {
+  opacity: 0.3;
 }
 
 .button {
@@ -703,11 +742,12 @@ body {
 }
 
 .apply-button:focus {
-  border: 3px solid #ffffff;
+  outline: 3px solid #ffffff;
   border-radius: 4px;
 }
 
 .apply-button:active {
+  outline: none;
   color: #ffffff;
   opacity: 0.3;
 }
@@ -727,12 +767,12 @@ body {
   align-self: center;
   width: 100px;
   color: #ffffff;
-  border: 3px solid #83B3D3;
+  outline: 3px solid #83B3D3;
   border-radius: 4px;
 }
 
 .reset-button:active {
-  border: none;
+  outline: none;
   opacity: 0.3;
 }
 
@@ -780,6 +820,11 @@ body {
   border: 2px solid #000000;
 }
 
+.card-grid-toggle:hover,
+.card-grid-toggle:focus {
+  border: 2px solid #83b3d3;
+}
+
 .hotels-results {
   margin: 0 auto;
   max-width: 1056px;
@@ -803,7 +848,7 @@ body {
   padding: 20px;
   width: 300px;
 }
-
+/* не понимаю, почему высота у ссылки получается 211px, высота картинки 206...*/
 .hotel-image-link {
   text-decoration: none;
 }
@@ -1087,16 +1132,16 @@ body {
   color: rgba(255, 255, 255, 0.3);
 }
 
-.favour-catalog-link:focus {
-  border: 3px solid #83b3d3;
-  border-radius: 4px;
-  /*border-image: linear-gradient(to top, #68A2CA, #83b3d3) ;*/
-  /*border-image-slice: 1;*/
-  border-radius: 4px;
+
+
+.favour-catalog-link:hover {
   background: #615048;
 }
 
-.favour-catalog-link:hover {
+.favour-catalog-link:focus {
+  border: 3px solid #83b3d3;
+  border-radius: 4px;
+  border-radius: 4px;
   background: #615048;
 }
 
@@ -1105,14 +1150,14 @@ body {
   color: rgba(255, 255, 255, 0.3);
 }
 
-.footer-contacts-phone:focus {
-  color: #756257;
-  border: 3px solid #83b3d3;
-  border-radius: 4px;
-}
-
 .footer-contacts-phone:hover {
   color: #756257;
+}
+
+.footer-contacts-phone:focus {
+  color: #756257;
+  outline: 3px solid #83b3d3;
+  border-radius: 4px;
 }
 
 .footer-contacts-phone:active {
@@ -1213,7 +1258,7 @@ body {
   box-sizing: border-box;
   width: 55px;
   height: 55px;
-  padding: 15px 20px;
+  padding: 15px 15px;
   font-weight: 700;
   font-size: 20px;
   line-height: 26px;
@@ -1228,6 +1273,21 @@ body {
 .pagination-current {
   color: #000000;
   background: #F2F2F2;
+}
+
+.pagination-link:hover {
+  background-color: #68a2ca;
+}
+
+.pagination-link:focus {
+  background-color: #68a2ca;
+  outline: 3px solid #756257;
+}
+
+.pagination-link:active {
+  outline: none;
+  background-color: #68a2ca;
+  opacity: 0.3;
 }
 
 .quantity-items-filter {
