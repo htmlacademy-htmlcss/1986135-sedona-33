@@ -1,6 +1,6 @@
 @font-face {
   font-family: "PT Sans";
-  src: url("fonts/ptsans-400.woff2") format("woff2");
+  src: url("../fonts/ptsans-400.woff2") format("woff2");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: "PT Sans";
-  src: url("fonts/ptsans-700.woff2") format("woff2");
+  src: url("../fonts/ptsans-700.woff2") format("woff2");
   font-style: normal;
   font-weight: 700;
   font-display: swap;
@@ -16,7 +16,7 @@
 
 @font-face {
   font-family: "PT Sans";
-  src: url("fonts/ptsans-400.woff2") format("woff2");
+  src: url("/fonts/ptsans-400.woff2") format("woff2");
   font-style: italic;
   font-weight: 400;
   font-display: swap;
@@ -24,7 +24,7 @@
 
 @font-face {
   font-family: "PT Sans";
-  src: url("fonts/ptsans-700.woff2") format("woff2");
+  src: url("/fonts/ptsans-700.woff2") format("woff2");
   font-style: italic;
   font-weight: 700;
   font-display: swap;
@@ -32,7 +32,7 @@
 
 html {
   height: 100%;
-  background-color: #e5e5e5;
+  background-color: #f2f2f2;
 }
 
 body {
@@ -99,6 +99,36 @@ body {
   padding: 0;
 }
 
+.navigation-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  fill: #000000;
+}
+
+.icon-counter {
+  displaY: block;
+  position: relative;
+  top: 13px;
+  left: 22px;
+  width: 19px;
+  height: 19px;
+  box-sizing: border-box;
+  padding-top: 3px;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 13px;
+  text-align: center;
+  color: #ffffff;
+  background: #7db550;
+  border-radius: 50%;
+  z-index: 2;
+
+}
+
 .page-header-logo {
   z-index: 10;
 }
@@ -111,6 +141,7 @@ body {
 }
 
 .navigation-link {
+  position: relative;
   display: block;
   padding: 20px 12px;
   font-size: 20px;
@@ -120,6 +151,18 @@ body {
   color: inherit;
   text-decoration: none;
   text-transform: capitalize;
+}
+
+.navigation-link:hover svg {
+  fill: #756257;
+}
+
+.navigation-link:active {
+  opacity: 0.3;
+}
+
+.navigation-icon {
+  fill: #000000;
 }
 
 .interest-button-link {
@@ -137,11 +180,9 @@ body {
   background-color: #756257;
   border-radius: 4px;
 
-
 }
 
 .head-note {
-
   align-content: center;
 }
 
@@ -199,6 +240,7 @@ body {
   margin-bottom: 30px;
 }
 
+/* ну а тут тексты, на макете слова выстроены по-другому. хотелось бы одним свойством их подогнать.ширина не помогла*/
 .advantages-description {
   margin: 0 90px 87px;
   max-width: 250px;
@@ -230,13 +272,6 @@ body {
   margin: 0 75px 20px;
 }
 
-/*.advantages-description:nth-child(2),
-.advantages-description:nth-child(3),
-.advantages-description:nth-child(4) {
-  margin: 0 75px 79px;
-}*/
-
-/*переделала на nth*/
 .advantages-item:first-child,
 .advantages-item:nth-child(7) {
   color: #ffffff;
@@ -318,6 +353,7 @@ body {
 }
 
 .newsletter-button {
+  padding: 15px 20px;
   color: #ffffff;
   font-weight: bold;
   font-size: 20px;
@@ -325,50 +361,129 @@ body {
   text-align: center;
   text-transform: uppercase;
   background-color: #83B3D3;
+  border: none;
+  border-radius: 0 10px 10px 0;
 }
 
+.newsletter-form {
+  display: grid;
+  grid-template-columns: 600px 200px;
+  width: 800px;
+
+}
+
+.field {
+  padding: 23px 19px 23px 22px;
+  background: #F2F2F2;
+  border: none;
+  border-radius: 10px 0px 0px 10px;
+}
+
+.field:focus {
+  outline: 3px solid #83b3d3;
+  background: #e6e6e6;
+}
+
+.field:focus {
+  background: #e6e6e6;
+}
+
+/*тут же просто пока заверстать в слукчае ошибки для js или через паттерн нужно сделать?*/
+/*.field:invalid {
+  outline: 2px solid #ff5757;
+  background: #ffffff;
+}*/
+
+.newsletter-button:focus {
+  background: #68a2ca;
+  outline: 3px solid #756257;
+}
+
+.newsletter-button:hover {
+  background: #68a2ca;
+}
+
+.newsletter-button:active {
+  background: #68a2ca;
+  opacity: 0.3;
+}
 
 .page-footer-container {
   display: flex;
-  width: 1200px;
+  width: 1056px;
   margin: 0 auto;
+  padding: 40px 0 30px 0;
+  justify-content: space-between;
 
 }
-
+/* тут чтобы сработал спейс битвин, пришлось убрать max-width*/
 .footer-social-list {
   display: flex;
   flex-wrap: wrap;
+  width: 126px;
   margin: 0;
   padding: 0;
   list-style-type: none;
   justify-content: space-between;
 }
 
-.footer-social {
-  max-width: 107px;
-  margin: 48px 61px 52px 72px;
+.footer-social-link {
+  display: block;
+  position: relative;
+  width: 40px;
+  height: 40px;
 }
 
-/*
-.footer-social-item {
-  width: 20px;
-  height: 20px;
-  
+.footer-social-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
 }
-*/
+
+.footer-social-tw,
+.footer-social-fb,
+.footer-social-youtube {
+  fill: #83b3d3;
+}
+
+.footer-social-link:hover svg {
+  fill: #68a2ca;
+}
+
+.footer-social-link:focus {
+  outline: 3px solid #83B3D3;
+  border-radius: 5px;
+}
+
+.footer-social-link:active {
+  opacity: 0.3;
+}
+
 .footer-contacts {
   width: 720px;
-  margin: 40px 53px 30px 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .htmlacademy-link {
-  margin: 42px 72px 44px 0;
-  width: 115px;
+  display: block;
+  padding-top: 5px;
+  padding-left: 5px;
+  width: 125px;
+  height: 44px;
+  text-decoration: none;
 }
 
-
+.htmlacademy-logo {
+  margin: auto;
+  fill: #000000;
+}
 
 .footer-contacts-phone {
+  display: block;
   color: #000000;
   font-size: 40px;
   line-height: 40px;
@@ -390,7 +505,7 @@ body {
 
 .sorting-container {
 
-  margin-top: -3px;
+  margin-top: -4px;
   padding: 35px 72px 83px 71px;
   color: #ffffff;
   font-size: 18px;
@@ -419,10 +534,53 @@ body {
 }
 
 .breadcrumps-link {
+  
   color: #ffffff;
   font-size: 16px;
-
   text-decoration: none;
+}
+
+.breadcrumps-link-home {
+  display: block;
+  width: 28px;
+  height: 27px;
+}
+
+.breadcrumps-item {
+  position: relative;
+  margin-right: 26px;
+}
+
+.breadcrumps-home {
+  fill: #ffffff;
+}
+
+.breadcrumps-item::after {
+  position: absolute;
+  top: 10px;
+  right: -11px;
+  width: 5px;
+  height: 8px;
+  background: url("../images/icons/nav-link-arrow.svg") no-repeat;
+  content: "";
+}
+
+.breadcrumps-item:last-child::after {
+  content: none;
+}
+
+.breadcrumps-link:hover {
+  opacity: 0.6;
+}
+
+.breadcrumps-link:focus {
+  outline: 3px solid #83b3d3;
+  border-radius: 4px;
+  color: #ffffff;
+}
+
+.breadcrumps-link:active {
+  opacity: 0.3;
 }
 
 .button {
@@ -445,16 +603,20 @@ body {
 .catalog-filter {
   display: flex;
   max-width: 1057px;
-  
 }
- 
+
+
 .catalog-filter-group {
   max-width: 150px;
   margin-right: 67px;
   padding: 0;
   border: none;
   text-align: left;
-  
+
+}
+
+.catalog-filter-group:nth-child(2) {
+  margin: 0;
 }
 
 .catalog-filter-title {
@@ -470,7 +632,7 @@ body {
 
 .filter-range {
   width: 288px;
-  margin-left: 167px;
+  margin-left: auto;
   margin-right: 98px;
   color: #ffffff;
 
@@ -482,57 +644,51 @@ body {
   font-size: 20px;
   line-height: 26px;
   text-transform: capitalize;
+  text-align: left;
 }
 
 .price-control {
   display: flex;
-  position: relative;
-  height: 48px;
-  margin-bottom: 32px;
-  border: 2px solid #ffffff;
-  border-radius: 4px;
 }
 
-.price-control::after {
-  content: "";
-  position: absolute;
-  right: 144px;
-  top: 23px;
-  width: 2px;
-  height: 48px;
-  background-color: #ffffff;
-  transform: translate(-50%, -50%);
-
+.min-price-control-block,
+.max-price-control-block {
+  position: relative;
 }
 
 .min-price-control,
 .max-price-control {
-  display: flex;
+  box-sizing: border-box;
   width: 144px;
-}
-
-.price-control label {
-
-  margin: 12px 14px 13px 0;
+  padding: 14px 25px 11px 19px;
   font-size: 18px;
   line-height: 23px;
   color: #ffffff;
-  opacity: 0.3;
-}
-
-.price-control input {
-  margin: 14px 50px 11px 17px;
-  width: 40px;
-  font-size: 18px;
-  line-height: 23px;
-  color: #ffffff;
+  border: 2px solid #ffffff;
   background: none;
-  border: none;
-  outline: none;
+}
+
+.max-price-control {
+  margin-left: -2px;
+}
+
+.min-price,
+.max-price {
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 23px;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 80px;
+  right: 0;
+  opacity: 0.3;
 }
 
 .range-control {
   position: relative;
+  margin-top: 30px;
 }
 
 .range-control .scale {
@@ -549,10 +705,9 @@ body {
 .toggle-range {
   position: absolute;
   top: -7px;
-  width: 2px;
-  height: 2px;
+  width: 20px;
+  height: 20px;
   background: #ffffff;
-  border: 8px solid #ffffff;
   border-radius: 5px;
 }
 
@@ -561,7 +716,7 @@ body {
 }
 
 .toggle-range-max {
-  left: 80%;
+  left: 75%;
 }
 
 .filter-buttons {
@@ -571,10 +726,54 @@ body {
 }
 
 .apply-button {
-  display: block;
-  max-width: 160px;
-  border:none;
+  box-sizing: border-box;
+  font-weight: 700;
+  width: 160px;
+  height: 48px;
+  margin-bottom: 20px;
+  padding: 12px 10px;
+  border: none;
+  border-radius: 4px;
   background: #83B3D3;
+}
+
+.apply-button:hover {
+  background: #68a2ca;
+}
+
+.apply-button:focus {
+  outline: 3px solid #ffffff;
+  border-radius: 4px;
+}
+
+.apply-button:active {
+  outline: none;
+  color: #ffffff;
+  opacity: 0.3;
+}
+
+
+.reset-button {
+  border: none;
+  background: none;
+  text-transform: capitalize;
+}
+
+.reset-button:hover {
+  opacity: 0.6;
+}
+
+.reset-button:focus {
+  align-self: center;
+  width: 100px;
+  color: #ffffff;
+  outline: 3px solid #83B3D3;
+  border-radius: 4px;
+}
+
+.reset-button:active {
+  outline: none;
+  opacity: 0.3;
 }
 
 .search-results-filter {
@@ -584,18 +783,15 @@ body {
 }
 
 .select-control {
+  width: 287px;
+  margin-left: auto;
+  margin-right: 80px;
+  padding: 13px 19px;
   font-size: 18px;
   line-height: 23px;
   color: #333333;
-}
-
-
-
-.search-results-filter .button {
-  width: 48px;
-  height: 48px;
-  border-box: 1px solid #83B3D3;
-  background-color: cadetblue;
+  border: 2px solid #e6e6e6;
+  border-radius: 4px;
 }
 
 .search-results-title {
@@ -604,6 +800,29 @@ body {
   font-size: 30px;
   line-height: 39px;
   text-transform: uppercase;
+}
+
+.card-grid-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 2px solid #e6e6e6;
+  border-radius: 4px;
+}
+
+.card-grid-toggle + .card-grid-toggle {
+  margin-left: 8px;
+}
+
+.card-grid-toggle-current {
+  border: 2px solid #000000;
+}
+
+.card-grid-toggle:hover,
+.card-grid-toggle:focus {
+  border: 2px solid #83b3d3;
 }
 
 .hotels-results {
@@ -628,6 +847,10 @@ body {
   flex-direction: column;
   padding: 20px;
   width: 300px;
+}
+/* не понимаю, почему высота у ссылки получается 211px, высота картинки 206...*/
+.hotel-image-link {
+  text-decoration: none;
 }
 
 .hotel-card-info {
@@ -706,6 +929,292 @@ body {
   border-radius: 4px;
 }
 
+.control {
+  padding-left: 40px;
+}
+
+.check-box {
+  position: absolute;
+  margin-left: -40px;
+  margin-top: 1px;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  background-color: #ffffff;
+}
+
+.radio-box {
+  position: absolute;
+  margin-left: -40px;
+  margin-top: 1px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+
+.control-input {
+  position: absolute;
+  appearance: none;
+}
+
+.control-input:checked+.check-box {
+  background: #ffffff;
+  background-image: url("../images/icons/vector.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.control-input:checked+.radio-box {
+  background: #ffffff;
+  background-image: url("../images/icons/ellipse.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+
+.control-input:checked:focus+.check-box {
+  background: rgba(255, 255, 255, 0.6);
+  background-image: url("../images/icons/vector.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  outline: 3px solid #83B3D3;
+  border-radius: 4px;
+}
+
+.control-input:checked:hover+.check-box {
+  background: rgba(255, 255, 255, 0.6);
+  background-image: url("../images/icons/vector.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.control-input:checked:active+.check-box {
+  background: rgba(255, 255, 255, 0.3);
+  background-image: url("../images/icons/vector.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+
+.control-input:focus+.check-box {
+  background: rgba(255, 255, 255, 0.6);
+  outline: 3px solid #83B3D3;
+  border-radius: 4px;
+}
+
+.control-input:hover+.check-box {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.control-input:active+.check-box {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.control-input:focus+.radio-box {
+  background: #ffffff;
+  background-image: url("../images/icons/ellipse.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  outline: 3px solid #83b3d3;
+  border-radius: 50%;
+}
+
+.control-input:hover+.radio-box {
+  outline: 3px solid #83b3d3;
+  outline-offset: -3px;
+}
+
+.control-input:active+.radio-box {
+  position: absolute;
+  margin-left: -30px;
+  margin-top: 1px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+
+/*фокус для рамки не работает*/
+/*.price-control:focus {
+  outline: 3px solid #83b3d3;
+  outline-offset: 3px solid #83b3d3;
+}
+
+.price-control:hover {
+  border: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+.price-control:hover::after{
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.price-control:active {
+  background: #756257;
+}*/
+
+
+.toggle-range:focus {
+  outline: 3px solid #83b3d3;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+
+.toggle-range:hover {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.toggle-range:active {
+  outline: 2px solid #83B3D3;
+  box-shadow: 0px 7px 15px rgba(0, 0, 0, 0.4);
+}
+
+.navigation-list .navigation-link:hover {
+  color: #756257;
+}
+
+.navigation-list .navigation-link:active {
+  color: rgba(117, 98, 87, 0.3);
+}
+
+.navigation-link-current {
+  padding: 19px 12px;
+  border-bottom: 2px solid #756257;
+}
+
+/*кнопка двигается при нажатии, как сделать с аутлайн или лучше через before/....теперь бордер радиус не срабатывает*/
+.interest-button-link:focus {
+  background: #615048;
+  outline: 3px solid #83b3d3;
+  border-radius: 4px;
+  border-radius: 4px;
+
+}
+
+.interest-button-link:hover {
+  background: #615048;
+}
+
+.interest-button-link:active {
+  background: #615048;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.button-favorites:focus {
+  background: #68A2CA;
+  outline: 3px solid #756257
+}
+
+.button-favorites:hover {
+  background: #68a2ca;
+  outline: 1px solid #756257;
+}
+
+.button-favorites:active {
+  background: #68a2ca;
+  outline: 1px solid #756257;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.button-likes:focus {
+  background: #6c9e42;
+  outline: 3px solid #756257
+}
+
+.button-likes:hover {
+  background: #6c9e42;
+}
+
+.button-likes:active {
+  background: #6c9e42;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+
+
+.favour-catalog-link:hover {
+  background: #615048;
+}
+
+.favour-catalog-link:focus {
+  border: 3px solid #83b3d3;
+  border-radius: 4px;
+  border-radius: 4px;
+  background: #615048;
+}
+
+.favour-catalog-link:active {
+  background: #615048;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.footer-contacts-phone:hover {
+  color: #756257;
+}
+
+.footer-contacts-phone:focus {
+  color: #756257;
+  outline: 3px solid #83b3d3;
+  border-radius: 4px;
+}
+
+.footer-contacts-phone:active {
+  color: #756257;
+  opacity: 0.3;
+}
+
+.hotel-description-button:focus {
+  outline: 3px solid #83b3d3;
+  border-radius: 4px;
+  background: #615048;
+}
+
+.hotel-description-button:hover {
+  background: #615048;
+}
+
+.hotel-description-button:active {
+  background: #615048;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.hotel-image-link:focus {
+  outline: 3px solid #83B3D3;
+}
+
+.hotel-image-link:hover {
+  opacity: 0.6;
+}
+
+.hotel-image-link:active {
+  opacity: 0.3;
+}
+
+
+.htmlacademy-link:hover svg {
+  fill: #756257;
+}
+
+.htmlacademy-link:focus {
+  outline: 3px solid #83b3d3;
+  border-radius: 10px;
+}
+
+.htmlacademy-link:focus svg {
+  fill: #756257
+}
+
+.htmlacademy-link:active {
+  opacity: 0.3;
+}
+
+.htmlacademy-link:active svg {
+  fill: #756257;
+  opacity: 0.3;
+}
+
 .pagination-container {
   display: flex;
   width: 1056px;
@@ -749,7 +1258,7 @@ body {
   box-sizing: border-box;
   width: 55px;
   height: 55px;
-  padding: 15px 20px;
+  padding: 15px 15px;
   font-weight: 700;
   font-size: 20px;
   line-height: 26px;
@@ -764,6 +1273,21 @@ body {
 .pagination-current {
   color: #000000;
   background: #F2F2F2;
+}
+
+.pagination-link:hover {
+  background-color: #68a2ca;
+}
+
+.pagination-link:focus {
+  background-color: #68a2ca;
+  outline: 3px solid #756257;
+}
+
+.pagination-link:active {
+  outline: none;
+  background-color: #68a2ca;
+  opacity: 0.3;
 }
 
 .quantity-items-filter {
