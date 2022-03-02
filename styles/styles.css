@@ -14,22 +14,6 @@
   font-display: swap;
 }
 
-@font-face {
-  font-family: "PT Sans";
-  src: url("/fonts/ptsans-400.woff2") format("woff2");
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "PT Sans";
-  src: url("/fonts/ptsans-700.woff2") format("woff2");
-  font-style: italic;
-  font-weight: 700;
-  font-display: swap;
-}
-
 html {
   height: 100%;
   background-color: #f2f2f2;
@@ -56,18 +40,14 @@ body {
   overflow: hidden;
 }
 
-.index-container {
-  width: 1280px;
-  margin: 0 auto;
-  background-color: #f2f2f2;
-}
-
 .page-container {
   display: flex;
   flex-direction: column;
   width: 1200px;
   margin: 0 auto;
   background-color: #ffffff;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+
 }
 
 .navigation {
@@ -97,6 +77,7 @@ body {
   min-width: 42px;
   min-height: 66px;
   padding: 0;
+  cursor: pointer;
 }
 
 .navigation-icon {
@@ -130,7 +111,7 @@ body {
 }
 
 .page-header-logo {
-  z-index: 10;
+  z-index: 3;
 }
 
 .welcome-img {
@@ -179,7 +160,21 @@ body {
   text-transform: uppercase;
   background-color: #756257;
   border-radius: 4px;
+  cursor: pointer;
+}
 
+.interest-button-link:hover {
+  background: #615048;
+}
+
+.interest-button-link:focus {
+  background: #615048;
+  outline: 3px solid #83b3d3;
+}
+
+.interest-button-link:active {
+  background: #615048;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .head-note {
@@ -208,6 +203,7 @@ body {
 }
 
 .main-intro {
+  margin-bottom: 80px;
   font-size: 22px;
   line-height: 36px;
 }
@@ -226,8 +222,9 @@ body {
 }
 
 .advantages-title {
-  margin-top: 97px;
-  margin-bottom: 30px;
+  display: block;
+  max-width: 170px;
+  margin: 97px auto 30px;
   font-size: 24px;
   line-height: 28px;
   font-weight: 700;
@@ -240,18 +237,23 @@ body {
   margin-bottom: 30px;
 }
 
-/* ну а тут тексты, на макете слова выстроены по-другому. хотелось бы одним свойством их подогнать.ширина не помогла*/
 .advantages-description {
   margin: 0 90px 87px;
   max-width: 250px;
 }
 
-.advantages-description:first-child {
-  max-width: 220px;
+.advantages-description-housing {
+  max-width: 170px;
+  margin: 0 auto 87px;
+}
+
+/* тут только задав жесткую ширину подучилось расположить текст, как положено */
+.advantages-description-4 {
+  width: 240px;
 }
 
 .advantages-image {
-  min-height: 100%;
+  display: block;
 }
 
 .house-image {
@@ -269,7 +271,7 @@ body {
 .advantages-title:nth-child(2),
 .advantages-title:nth-child(3),
 .advantages-title:nth-child(4) {
-  margin: 0 75px 20px;
+  margin: 0 auto 20px;
 }
 
 .advantages-item:first-child,
@@ -293,27 +295,34 @@ body {
 }
 
 .favour {
-  padding-bottom: 93px;
+  width: 720px;
+  margin: 0 auto;
+  padding: 89px 0;
 }
 
-.favour-title {
-  margin-top: 91px;
+.favour-title,
+.newsletter-title {
+  margin: 0;
   margin-bottom: 29px;
-
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 36px;
+  text-transform: uppercase;
 }
 
 .favour-description {
-  margin: 0 auto 56px;
-  width: 720px;
+  margin: 0;
+  margin-bottom: 56px;
   font-size: 22px;
   line-height: 26px;
 }
 
 .favour-catalog-link {
-
-  padding: 15px 150px;
+  display:block;
+  box-sizing: border-box;
+  padding: 15px 148px;
   width: 575px;
-  margin-bottom: 93px;
+  margin: 2px auto 0;
   color: #ffffff;
   text-decoration: none;
   font-size: 20px;
@@ -340,16 +349,10 @@ body {
   width: 800px;
 }
 
-.newsletter-title,
-.favour-title {
-  font-weight: 700;
-  font-size: 30px;
-  line-height: 36px;
-  text-transform: uppercase;
-}
-
 .newsletter-description {
-  margin: 29px 0 46px;
+  
+  max-width: 500px;
+  margin: 0 auto 46px;
 }
 
 .newsletter-button {
@@ -363,6 +366,7 @@ body {
   background-color: #83B3D3;
   border: none;
   border-radius: 0 10px 10px 0;
+  cursor: pointer;
 }
 
 .newsletter-form {
@@ -373,10 +377,14 @@ body {
 }
 
 .field {
-  padding: 23px 19px 23px 22px;
+  padding: 17px 19px 17px 22px;
+  font: inherit;
+  font-size: 18px;
+  line-height: 26px;
   background: #F2F2F2;
   border: none;
   border-radius: 10px 0px 0px 10px;
+  cursor: pointer;
 }
 
 .field:focus {
@@ -388,11 +396,18 @@ body {
   background: #e6e6e6;
 }
 
-/*тут же просто пока заверстать в слукчае ошибки для js или через паттерн нужно сделать?*/
-/*.field:invalid {
+.newsletter-form .field:invalid {
+  box-shadow: none;
+}
+
+.newsletter-form .field:focus:invalid {
   outline: 2px solid #ff5757;
   background: #ffffff;
-}*/
+}
+
+.field::placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
 
 .newsletter-button:focus {
   background: #68a2ca;
@@ -416,7 +431,7 @@ body {
   justify-content: space-between;
 
 }
-/* тут чтобы сработал спейс битвин, пришлось убрать max-width*/
+
 .footer-social-list {
   display: flex;
   flex-wrap: wrap;
@@ -492,10 +507,336 @@ body {
   text-decoration: none;
 }
 
-.catalog-container {
-  width: 1280px;
-  margin: 0 auto;
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(242, 242, 242, 0.8);
+  z-index: 4;
+}
+
+.modal-container-close {
+  display: none;
+}
+
+.modal {
+  position: relative;
+  margin: auto;
+  padding: 70px;
+  background-color: #ffffff;
+  border-radius: 30px;
+
+}
+
+.modal-hotel-search {
+  width: 575px;
+}
+
+.modal-close-button {
+  position: absolute;
+  padding: 0;
+  top: 65px;
+  right: 70px;
+  width: 53px;
+  height: 53px;
   background-color: #f2f2f2;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.modal-close-button svg {
+  fill: #000000;
+}
+
+.modal-close-button:hover {
+  background-color: #e6e6e6;
+}
+
+.modal-close-button:focus {
+  background-color: #e6e6e6;
+  outline: 3px solid #83b3d3;
+}
+
+.modal-close-button:active {
+  background: #e6e6e6;
+  fill: #000000;
+  fill-opacity: 0.3;
+}
+
+.modal-title {
+  margin: 0;
+  margin-bottom: 59px;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 40px;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.search-form p {
+  margin: 0;
+  margin-bottom: 40px;
+}
+
+.check-date {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-label {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 40px;
+}
+
+.check-date .field {
+  background-image: url("../images/icons/calendar.svg");
+  background-repeat: no-repeat;
+  background-position: 400px;
+}
+
+.field-success {
+  display: block;
+  position: absolute;
+  top: 45px;
+  left: 140px;
+  font-size: 16px;
+  line-height: 40px;
+  color: #333333;
+}
+
+.field-error {
+  display: block;
+  position: absolute;
+  top: 45px;
+  left: 140px;
+  font-size: 16px;
+  line-height: 40px;
+  color: #ff5757;
+}
+
+.check-date .field:hover {
+  background-color: #e6e6e6;
+}
+
+.check-date .field:focus {
+  background-color: #e6e6e6;
+  outline: 3px solid #83b3d3;
+}
+
+.check-date .field:active {
+  background-color: #ffffff;
+  outline: 2px solid #000000;
+}
+
+.quantity-form {
+  display: flex;
+  margin-bottom: 40px;
+  width: 575px;
+  justify-content: space-between;
+}
+
+.guest-quantity {
+  display: flex;
+}
+
+.guest-quantity-adults {
+  width: 280px;
+}
+
+.guest-quantity-children {
+  width: 230px;
+}
+
+.guest-amount {
+  display: flex;
+  width: 133px;
+  background-color: #f2f2f2;
+  align-items: center;
+  border-radius: 4px;
+}
+
+.form-guest-label {
+  margin-right: 27px;
+  align-self: center;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 40px;
+}
+
+.adults-quantity,
+.children-quantity {
+  box-sizing: border-box;
+  margin-right: 2px;
+  padding-top: 4px;
+  width: 79px;
+  border: none;
+  border-radius: 4px;
+  background-color: transparent;
+  font-size: 18px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.guest-quantity input::-webkit-inner-spin-button,
+.guest-quantity input::-webkit-outer-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+.amount-button {
+  top: 12.5px;
+  width: 25px;
+  height: 25px;
+  background: #f2f2f2;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.amount-button:hover svg {
+  fill: #000000;
+}
+
+.amount-button:focus {
+  outline: 3px solid #83b3d3;
+
+}
+
+.amount-button:active {
+  fill-opacity: 0.2;
+}
+
+.plus {
+  display: block;
+  fill: rgba(0, 0, 0, 0.3);
+}
+
+.minus {
+  display: block;
+  fill: rgba(0, 0, 0, 0.3);
+}
+
+.minus-toggle {
+  margin-left: 6px;
+}
+
+.plus-toggle {
+  margin-right: 6px;
+}
+
+.search-form .field {
+  padding: 5px 0 5px 19px;
+  width: 420px;
+  font-weight: 700;
+  font-family: inherit;
+  font-size: 18px;
+  line-height: 40px;
+  border-radius: 4px;
+  color: #000000;
+}
+
+.search-button {
+  padding: 20px 0;
+  width: 575px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 40px;
+  border: none;
+  border-radius: 10px;
+  background-color: #83b3d3;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #68a2ca;
+}
+
+.search-button:focus {
+  background-color: #68a2ca;
+  outline: 3px solid #756257;
+}
+
+.search-button:active {
+  opacity: 0.3;
+}
+
+.tooltip {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  margin-left: -20px;
+  margin-top: 8px;
+}
+
+.tooltip-toggle {
+  display: block;
+  padding: 0;
+  margin: 0;
+  width: 25px;
+  height: 25px;
+  border: none;
+  border-radius: 50%;
+  background-color: #83b3d3;
+}
+
+.tooltip-icon {
+  line-height: 9px;
+  color: #ffffff;
+}
+
+.tooltip-toggle:hover {
+  background-color: #68a2ca;
+}
+
+.toolti-text-triangle {
+  display: block;
+}
+
+.tooltip-text {
+  display: block;
+  width: 216px;
+  background-color: #333333;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  padding: 14px 18px 18px 22px;
+  text-transform: none;
+  text-align: left;
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  position: absolute;
+  top: 100%;
+  margin-top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+}
+
+.tooltip-text::before {
+  content: "";
+  background-image: url("../images/icons/tooltip-arrow.svg");
+  width: 19px;
+  height: 9px;
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.tooltip-toggle:hover+.tooltip-text,
+.tooltip-toggle:focus+.tooltip-text {
+  display: block;
 }
 
 .navigation-logo {
@@ -517,7 +858,7 @@ body {
 
 .inner-header-title {
   margin-top: 0;
-  margin-bottom: 5px;
+  margin-bottom: -5px;
   font-weight: 700;
   font-size: 60px;
   line-height: 78px;
@@ -534,7 +875,7 @@ body {
 }
 
 .breadcrumps-link {
-  
+
   color: #ffffff;
   font-size: 16px;
   text-decoration: none;
@@ -552,6 +893,7 @@ body {
 }
 
 .breadcrumps-home {
+  padding-top: 6px;
   fill: #ffffff;
 }
 
@@ -600,23 +942,87 @@ body {
   margin-top: 45px;
 }
 
+.control {
+  position: relative;
+  display: block;
+  padding-left: 39px;
+  cursor: pointer;
+}
+
+.control-input {
+  position: absolute;
+  appearance: none; 
+} 
+
+.control-mark {
+  position: absolute;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  border-radius: 4px;
+}
+
+
+.control:hover .control-mark {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+/*не работал фокус, сделала так и через appearance все-таки.*/
+
+ .control-input:focus + .control-mark {
+  background: rgba(255, 255, 255, 0.6);
+  outline: 3px solid #83b3d3;
+} 
+
+.control:active .control-mark {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+
+.control-input[type="checkbox"]:checked +.control-mark::before {
+  position: absolute;
+  left: 4px;
+  top: 5px;
+  width: 12px;
+  height: 10px;
+  background: url("../images/icons/vector.svg") no-repeat;
+  content: "";
+}
+
+.control-input[type="radio"] +.control-mark {
+  border-radius: 50%;
+}
+
+.control-input[type="radio"]:checked+.control-mark::before {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #3f5e72;
+  content: "";
+}
+
 .catalog-filter {
   display: flex;
   max-width: 1057px;
 }
 
-
 .catalog-filter-group {
-  max-width: 150px;
   margin-right: 67px;
   padding: 0;
   border: none;
   text-align: left;
-
 }
 
 .catalog-filter-group:nth-child(2) {
-  margin: 0;
+  margin-right: 167px;
+}
+
+.catalog-filter-group:nth-child(3) {
+  margin-right: 78px;
 }
 
 .catalog-filter-title {
@@ -630,99 +1036,121 @@ body {
   margin-bottom: 16px;
 }
 
-.filter-range {
-  width: 288px;
-  margin-left: auto;
-  margin-right: 98px;
-  color: #ffffff;
-
+.catalog-filter-label {
+  position: absolute;
+  width: 20px;
+  height: 23px;
+  color: rgba(255, 255, 255, 0.6);
 }
 
-.filter-range-title {
-  margin-bottom: 34px;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 26px;
-  text-transform: capitalize;
-  text-align: left;
+.label-min {
+  top: 15px;
+  left: 110px;
 }
 
-.price-control {
+.label-max {
+  top: 15px;
+  left: 250px;
+}
+
+.range-wrapper-inputs {
   display: flex;
-}
-
-.min-price-control-block,
-.max-price-control-block {
+  justify-content: center;
   position: relative;
 }
 
-.min-price-control,
-.max-price-control {
+.range-input {
   box-sizing: border-box;
-  width: 144px;
-  padding: 14px 25px 11px 19px;
+  width: 143px;
+  margin-bottom: 32px;
+  padding: 14px 34px 11px 19px;
+  font: inherit;
   font-size: 18px;
   line-height: 23px;
   color: #ffffff;
   border: 2px solid #ffffff;
-  background: none;
+  border-radius: 4px 0 0 4px;
+  background: transparent;
 }
 
-.max-price-control {
-  margin-left: -2px;
+.range-input:last-of-type {
+  border-radius: 0 4px 4px 0;
 }
 
-.min-price,
-.max-price {
-  display: block;
-  position: absolute;
-  width: 20px;
-  height: 23px;
-  margin: auto;
-  top: 0;
-  bottom: 0;
-  left: 80px;
-  right: 0;
-  opacity: 0.3;
+.range-input:hover {
+  border-color: rgba(255, 255, 255, 0.6);
 }
 
-.range-control {
+.range-input:focus {
+
+  box-shadow: inset 0px 0px 0px 3px #81b3d2,
+    0px 0px 0px 3px #81b3d2;
+  border: 2px solid #ffffff;
+}
+
+.range-input:active {
+  background-color: #756257;
+}
+
+.range-scale {
   position: relative;
-  margin-top: 30px;
-}
-
-.range-control .scale {
   height: 4px;
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-.range-control .bar {
+.range-bar {
+  position: absolute;
   height: 4px;
-  width: 227px;
-  background: #ffffff;
+  background-color: #ffffff;
 }
 
-.toggle-range {
+.range-toggle {
   position: absolute;
-  top: -7px;
   width: 20px;
   height: 20px;
-  background: #ffffff;
+  background-color: #ffffff;
+  border: none;
   border-radius: 5px;
+  cursor: pointer;
 }
 
-.toggle-range-min {
-  left: 0;
+.toggle-min {
+  top: -8px;
 }
 
-.toggle-range-max {
-  left: 75%;
+.toggle-max {
+  top: -8px;
+  right: 0;
+}
+
+.range-toggle:hover {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.range-toggle:focus {
+  border: 3px solid #83b3d3;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.range-toggle:active {
+  border: 2px solid #83b3d3;
+  box-shadow: 0px 7px 15px rgba(0, 0, 0, 0.4);
+}
+/* в мозилле они не убрались. надо как-то специально их? */
+.range-input::-webkit-inner-spin-button,
+.range-input::-webkit-outer-spin-button {
+  appearance: none;
+  margin: 0;
+}
+/*так правильно?*/
+.range-input {
+  -moz-appearance: textfield;
 }
 
 .filter-buttons {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  padding-top: 55px;
 }
 
 .apply-button {
@@ -735,6 +1163,7 @@ body {
   border: none;
   border-radius: 4px;
   background: #83B3D3;
+  cursor: pointer;
 }
 
 .apply-button:hover {
@@ -747,7 +1176,6 @@ body {
 }
 
 .apply-button:active {
-  outline: none;
   color: #ffffff;
   opacity: 0.3;
 }
@@ -757,6 +1185,7 @@ body {
   border: none;
   background: none;
   text-transform: capitalize;
+  cursor: pointer;
 }
 
 .reset-button:hover {
@@ -772,13 +1201,12 @@ body {
 }
 
 .reset-button:active {
-  outline: none;
   opacity: 0.3;
 }
 
 .search-results-filter {
   display: flex;
-  margin: 44px 72px 53px 71px;
+  margin: 0 72px 53px 71px;
 
 }
 
@@ -787,15 +1215,34 @@ body {
   margin-left: auto;
   margin-right: 80px;
   padding: 13px 19px;
+  font: inherit;
   font-size: 18px;
   line-height: 23px;
   color: #333333;
   border: 2px solid #e6e6e6;
+  background-color: #ffffff;
   border-radius: 4px;
+  background-image: url(../images/icons/select-arrow.svg);
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  appearance: none;
+  cursor: pointer;
+}
+
+.select-control:hover,
+.select-control:focus {
+  outline: 2px solid #83b3d3;
+}
+
+.select-control:active {
+  outline: 2px solid #e6e6e6;
+  opacity: 0.3;
 }
 
 .search-results-title {
+  display: block;
   margin: 0;
+  padding-top: 6px;
   font-weight: 700;
   font-size: 30px;
   line-height: 39px;
@@ -812,7 +1259,7 @@ body {
   border-radius: 4px;
 }
 
-.card-grid-toggle + .card-grid-toggle {
+.card-grid-toggle+.card-grid-toggle {
   margin-left: 8px;
 }
 
@@ -848,9 +1295,13 @@ body {
   padding: 20px;
   width: 300px;
 }
-/* не понимаю, почему высота у ссылки получается 211px, высота картинки 206...*/
+
 .hotel-image-link {
   text-decoration: none;
+}
+
+.hotel-image {
+  display: block;
 }
 
 .hotel-card-info {
@@ -929,133 +1380,6 @@ body {
   border-radius: 4px;
 }
 
-.control {
-  padding-left: 40px;
-}
-
-.check-box {
-  position: absolute;
-  margin-left: -40px;
-  margin-top: 1px;
-  width: 20px;
-  height: 20px;
-  border-radius: 4px;
-  background-color: #ffffff;
-}
-
-.radio-box {
-  position: absolute;
-  margin-left: -40px;
-  margin-top: 1px;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: #ffffff;
-}
-
-.control-input {
-  position: absolute;
-  appearance: none;
-}
-
-.control-input:checked+.check-box {
-  background: #ffffff;
-  background-image: url("../images/icons/vector.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.control-input:checked+.radio-box {
-  background: #ffffff;
-  background-image: url("../images/icons/ellipse.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-
-
-.control-input:checked:focus+.check-box {
-  background: rgba(255, 255, 255, 0.6);
-  background-image: url("../images/icons/vector.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  outline: 3px solid #83B3D3;
-  border-radius: 4px;
-}
-
-.control-input:checked:hover+.check-box {
-  background: rgba(255, 255, 255, 0.6);
-  background-image: url("../images/icons/vector.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.control-input:checked:active+.check-box {
-  background: rgba(255, 255, 255, 0.3);
-  background-image: url("../images/icons/vector.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-
-
-.control-input:focus+.check-box {
-  background: rgba(255, 255, 255, 0.6);
-  outline: 3px solid #83B3D3;
-  border-radius: 4px;
-}
-
-.control-input:hover+.check-box {
-  background: rgba(255, 255, 255, 0.6);
-}
-
-.control-input:active+.check-box {
-  background: rgba(255, 255, 255, 0.3);
-}
-
-.control-input:focus+.radio-box {
-  background: #ffffff;
-  background-image: url("../images/icons/ellipse.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  outline: 3px solid #83b3d3;
-  border-radius: 50%;
-}
-
-.control-input:hover+.radio-box {
-  outline: 3px solid #83b3d3;
-  outline-offset: -3px;
-}
-
-.control-input:active+.radio-box {
-  position: absolute;
-  margin-left: -30px;
-  margin-top: 1px;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: #ffffff;
-}
-
-/*фокус для рамки не работает*/
-/*.price-control:focus {
-  outline: 3px solid #83b3d3;
-  outline-offset: 3px solid #83b3d3;
-}
-
-.price-control:hover {
-  border: 2px solid rgba(255, 255, 255, 0.6);
-}
-
-.price-control:hover::after{
-  background-color: rgba(255, 255, 255, 0.6);
-}
-
-.price-control:active {
-  background: #756257;
-}*/
-
-
 .toggle-range:focus {
   outline: 3px solid #83b3d3;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
@@ -1080,27 +1404,23 @@ body {
 }
 
 .navigation-link-current {
+  position: relative;
   padding: 19px 12px;
-  border-bottom: 2px solid #756257;
 }
 
-/*кнопка двигается при нажатии, как сделать с аутлайн или лучше через before/....теперь бордер радиус не срабатывает*/
-.interest-button-link:focus {
-  background: #615048;
-  outline: 3px solid #83b3d3;
-  border-radius: 4px;
-  border-radius: 4px;
-
+.navigation-link-current::after {
+  content: "";
+  width: 80%;
+  height: 2px;
+  position: absolute;
+  bottom: -2px;
+  left: 10%;
+  background-color: #756257;
 }
 
-.interest-button-link:hover {
-  background: #615048;
-}
 
-.interest-button-link:active {
-  background: #615048;
-  color: rgba(255, 255, 255, 0.3);
-}
+
+
 
 .button-favorites:focus {
   background: #68A2CA;
@@ -1139,9 +1459,7 @@ body {
 }
 
 .favour-catalog-link:focus {
-  border: 3px solid #83b3d3;
-  border-radius: 4px;
-  border-radius: 4px;
+  outline: 3px solid #83b3d3;
   background: #615048;
 }
 
@@ -1240,6 +1558,7 @@ body {
   border: 1px solid #e5e5e5;
   border-left: none;
   border-right: none;
+  cursor: pointer;
 }
 
 .pagination-show-more {
@@ -1285,7 +1604,6 @@ body {
 }
 
 .pagination-link:active {
-  outline: none;
   background-color: #68a2ca;
   opacity: 0.3;
 }
@@ -1297,6 +1615,35 @@ body {
 .quantity-items {
   font-size: 18px;
   line-height: 23px;
+}
+
+.number-of-items {
+  width: 160px;
+  margin-left: 51px;
+  padding: 10px 17px;
+  padding-right: 100px;
+  font: inherit;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  border: 2px solid #e6e6e6;
+  border-radius: 4px;
+  background-color: #ffffff;
+  background-image: url(../images/icons/select-arrow.svg);
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  appearance: none;
+  cursor: pointer;
+}
+
+.number-of-items:hover,
+.number-of-items:focus {
+  outline: 2px solid #83b3d3;
+}
+
+.number-of-items:active {
+  outline: 2px solid #e6e6e6;
+  opacity: 0.3;
 }
 
 .newsletter-inner {
@@ -1321,9 +1668,10 @@ body {
 }
 
 .newsletter-description-inner {
-  margin: 46px 0;
-  font-weight: 400;
+  display: block;
+  max-width: 500px;
+  margin: 46px auto;
   font-size: 22px;
   line-height: 26px;
-  hyphens: manual;
+
 }
