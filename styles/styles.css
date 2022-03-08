@@ -21,6 +21,8 @@ html {
 
 body {
   margin: 0;
+  padding-left: 40px;
+  padding-right: 40px;
   min-height: 100%;
   font-family: "PT Sans", Arial, sans-serif;
   font-size: 18px;
@@ -47,7 +49,10 @@ body {
   margin: 0 auto;
   background-color: #ffffff;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
 
+.page-header {
+  position: relative;
 }
 
 .navigation {
@@ -56,13 +61,11 @@ body {
   margin: 0 auto;
 }
 
-
-
 .navigation-list {
   display: flex;
   flex-wrap: wrap;
   margin: 0;
-  padding: 0;
+  padding-left: 169px;
   width: 450px;
   list-style-type: none;
 }
@@ -93,8 +96,8 @@ body {
 .icon-counter {
   displaY: block;
   position: relative;
-  top: 13px;
-  left: 22px;
+  top: 15px;
+  left: 24px;
   width: 19px;
   height: 19px;
   box-sizing: border-box;
@@ -110,21 +113,23 @@ body {
 
 }
 
-.page-header-logo {
+.navigation-logo {
+  position: absolute;
+  width: 139px;
+  height: 70px;
+  text-decoration: none;
   z-index: 3;
 }
 
 .welcome-img {
   width: 100%;
   height: auto;
-  position: relative;
-  top: -3px;
 }
 
 .navigation-link {
   position: relative;
   display: block;
-  padding: 20px 12px;
+  padding: 20px 17px;
   font-size: 20px;
   line-height: 26px;
   font-weight: 700;
@@ -148,6 +153,7 @@ body {
 
 .interest-button-link {
   display: block;
+  box-sizing: border-box;
   padding: 9px 15px;
   margin: 14px 0 14px 20px;
   width: 160px;
@@ -187,13 +193,13 @@ body {
 }
 
 .main-index {
-  margin-top: -7px;
+  margin-top: 0;
   text-align: center;
 }
 
 .main-title {
   max-width: 720px;
-  margin-top: 62px;
+  margin-top: 60px;
   margin-bottom: 31px;
   margin-left: 240px;
   font-weight: 700;
@@ -237,8 +243,12 @@ body {
   margin-bottom: 30px;
 }
 
-.advantages-description {
+.advantages-item:first-child .advantages-description {
   margin: 0 90px 87px;
+}
+
+.advantages-description {
+  margin: 0 75px 87px;
   max-width: 250px;
 }
 
@@ -247,25 +257,20 @@ body {
   margin: 0 auto 87px;
 }
 
-/* тут только задав жесткую ширину подучилось расположить текст, как положено */
-.advantages-description-4 {
-  width: 240px;
-}
-
 .advantages-image {
   display: block;
 }
 
 .house-image {
-  margin: 89px 163px 23px;
+  margin: 89px 163px 20px;
 }
 
 .burger-image {
-  margin: 91px 163px 23px;
+  margin: 91px 163px 20px;
 }
 
 .present-image {
-  margin: 85px 168px 23px;
+  margin: 85px 168px 19px;
 }
 
 .advantages-title:nth-child(2),
@@ -294,10 +299,17 @@ body {
   background: rgba(131, 179, 211, 0.2);
 }
 
+.advantages-item:nth-child(8) .advantages-description,
+.advantages-item:nth-child(9) .advantages-description,
+.advantages-item:nth-child(10) .advantages-description {
+  margin-bottom: 108px;
+
+}
+
 .favour {
   width: 720px;
   margin: 0 auto;
-  padding: 89px 0;
+  padding: 91px 0 93px;
 }
 
 .favour-title,
@@ -318,9 +330,9 @@ body {
 }
 
 .favour-catalog-link {
-  display:block;
+  display: block;
   box-sizing: border-box;
-  padding: 15px 148px;
+  padding: 12px 148px;
   width: 575px;
   margin: 2px auto 0;
   color: #ffffff;
@@ -339,6 +351,7 @@ body {
   background-image: url("../images/views/background.jpg");
   background-size: 100% auto;
   background-repeat: no-repeat;
+  background-color: #68a2ca;
   font-size: 22px;
   line-height: 26px;
   text-align: center;
@@ -350,7 +363,7 @@ body {
 }
 
 .newsletter-description {
-  
+
   max-width: 500px;
   margin: 0 auto 46px;
 }
@@ -358,6 +371,7 @@ body {
 .newsletter-button {
   padding: 15px 20px;
   color: #ffffff;
+  font-family: "PT Sans";
   font-weight: bold;
   font-size: 20px;
   line-height: 26px;
@@ -405,6 +419,12 @@ body {
   background: #ffffff;
 }
 
+.newsletter-form .field:disabled,
+.newsletter-form .field:disabled:hover {
+  color: #333333;
+  background-color: #d3d3d3;
+}
+
 .field::placeholder {
   color: rgba(0, 0, 0, 0.6);
 }
@@ -427,7 +447,7 @@ body {
   display: flex;
   width: 1056px;
   margin: 0 auto;
-  padding: 40px 0 30px 0;
+  padding: 38px 0 38px 0;
   justify-content: space-between;
 
 }
@@ -439,14 +459,14 @@ body {
   margin: 0;
   padding: 0;
   list-style-type: none;
-  justify-content: space-between;
 }
 
 .footer-social-link {
   display: block;
   position: relative;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
 }
 
 .footer-social-icon {
@@ -479,21 +499,17 @@ body {
 
 .footer-contacts {
   width: 720px;
-  padding-top: 5px;
-  padding-bottom: 5px;
 }
 
 .htmlacademy-link {
   display: block;
-  padding-top: 5px;
-  padding-left: 5px;
-  width: 125px;
-  height: 44px;
+  padding: 5px;
+  width: 115px;
+  height: 34px;
   text-decoration: none;
 }
 
 .htmlacademy-logo {
-  margin: auto;
   fill: #000000;
 }
 
@@ -526,6 +542,7 @@ body {
   position: relative;
   margin: auto;
   padding: 70px;
+  padding-top: 62px;
   background-color: #ffffff;
   border-radius: 30px;
 
@@ -538,7 +555,7 @@ body {
 .modal-close-button {
   position: absolute;
   padding: 0;
-  top: 65px;
+  top: 55px;
   right: 70px;
   width: 53px;
   height: 53px;
@@ -598,14 +615,14 @@ body {
 .check-date .field {
   background-image: url("../images/icons/calendar.svg");
   background-repeat: no-repeat;
-  background-position: 400px;
+  background-position: 385px;
 }
 
 .field-success {
   display: block;
   position: absolute;
   top: 45px;
-  left: 140px;
+  left: 155px;
   font-size: 16px;
   line-height: 40px;
   color: #333333;
@@ -615,7 +632,7 @@ body {
   display: block;
   position: absolute;
   top: 45px;
-  left: 140px;
+  left: 155px;
   font-size: 16px;
   line-height: 40px;
   color: #ff5757;
@@ -644,10 +661,11 @@ body {
 
 .guest-quantity {
   display: flex;
+  justify-content: space-between;
 }
 
 .guest-quantity-adults {
-  width: 280px;
+  width: 287px;
 }
 
 .guest-quantity-children {
@@ -674,7 +692,8 @@ body {
 .children-quantity {
   box-sizing: border-box;
   margin-right: 2px;
-  padding-top: 4px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   width: 79px;
   border: none;
   border-radius: 4px;
@@ -724,14 +743,15 @@ body {
 }
 
 .minus-toggle {
-  margin-left: 6px;
+  margin-left: 10px;
 }
 
 .plus-toggle {
-  margin-right: 6px;
+  margin-right: 10px;
 }
 
 .search-form .field {
+  box-sizing: border-box;
   padding: 5px 0 5px 19px;
   width: 420px;
   font-weight: 700;
@@ -771,8 +791,8 @@ body {
   position: absolute;
   width: 25px;
   height: 25px;
-  margin-left: -20px;
-  margin-top: 8px;
+  margin-left: -17px;
+  margin-top: 9px;
 }
 
 .tooltip-toggle {
@@ -807,13 +827,13 @@ body {
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
-  padding: 14px 18px 18px 22px;
+  padding: 15px 18px 18px 22px;
   text-transform: none;
   text-align: left;
   box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   position: absolute;
-  top: 100%;
+  top: 107%;
   margin-top: 15px;
   left: 50%;
   transform: translateX(-50%);
@@ -840,28 +860,29 @@ body {
 }
 
 .navigation-logo {
-  display: flex;
+  position: absolute;
+  width: 139px;
+  height: 70px;
   text-decoration: none;
+  z-index: 3;
 }
 
 .sorting-container {
-
-  margin-top: -4px;
-  padding: 35px 72px 83px 71px;
+  padding: 45px 72px 80px 71px;
   color: #ffffff;
   font-size: 18px;
   line-height: 23px;
   background-image: url("../images/views/catalog-background.jpg");
-  background-size: auto auto;
+  background-size: cover;
   background-repeat: no-repeat;
+  background-color: #756257;
 }
 
 .inner-header-title {
-  margin-top: 0;
-  margin-bottom: -5px;
+  margin: 0;
   font-weight: 700;
   font-size: 60px;
-  line-height: 78px;
+  line-height: 58px;
   text-transform: capitalize;
   text-align: left;
   color: #ffffff;
@@ -878,6 +899,7 @@ body {
 
   color: #ffffff;
   font-size: 16px;
+  line-height: 21px;
   text-decoration: none;
 }
 
@@ -885,11 +907,12 @@ body {
   display: block;
   width: 28px;
   height: 27px;
+  margin-left: -5px;
 }
 
 .breadcrumps-item {
   position: relative;
-  margin-right: 26px;
+  margin-right: 18px;
 }
 
 .breadcrumps-home {
@@ -900,7 +923,7 @@ body {
 .breadcrumps-item::after {
   position: absolute;
   top: 10px;
-  right: -11px;
+  right: -8px;
   width: 5px;
   height: 8px;
   background: url("../images/icons/nav-link-arrow.svg") no-repeat;
@@ -926,6 +949,7 @@ body {
 }
 
 .button {
+  font-family: "PT Sans";
   font-size: 16px;
   line-height: 21px;
   text-transform: uppercase;
@@ -939,7 +963,7 @@ body {
 }
 
 .filters-container {
-  margin-top: 45px;
+  margin-top: 41px;
 }
 
 .control {
@@ -951,12 +975,13 @@ body {
 
 .control-input {
   position: absolute;
-  appearance: none; 
-} 
+  appearance: none;
+}
 
 .control-mark {
   position: absolute;
-  left: 0;
+  left: 1px;
+  bottom: 2px;
   width: 20px;
   height: 20px;
   background-color: #ffffff;
@@ -968,19 +993,17 @@ body {
   background: rgba(255, 255, 255, 0.6);
 }
 
-/*не работал фокус, сделала так и через appearance все-таки.*/
-
- .control-input:focus + .control-mark {
+.control-input:focus+.control-mark {
   background: rgba(255, 255, 255, 0.6);
   outline: 3px solid #83b3d3;
-} 
+}
 
 .control:active .control-mark {
   background: rgba(255, 255, 255, 0.3);
 }
 
 
-.control-input[type="checkbox"]:checked +.control-mark::before {
+.control-input[type="checkbox"]:checked+.control-mark::before {
   position: absolute;
   left: 4px;
   top: 5px;
@@ -990,7 +1013,7 @@ body {
   content: "";
 }
 
-.control-input[type="radio"] +.control-mark {
+.control-input[type="radio"]+.control-mark {
   border-radius: 50%;
 }
 
@@ -1012,28 +1035,30 @@ body {
 
 .catalog-filter-group {
   margin-right: 67px;
+  margin-left: 0;
   padding: 0;
   border: none;
   text-align: left;
 }
 
 .catalog-filter-group:nth-child(2) {
-  margin-right: 167px;
+  margin-right: 169px;
 }
 
 .catalog-filter-group:nth-child(3) {
-  margin-right: 78px;
+  margin-right: 82px;
 }
 
 .catalog-filter-title {
-  margin-bottom: 30px;
+  margin-bottom: 34px;
+  padding: 0;
   font-weight: 700;
   font-size: 20px;
   line-height: 26px;
 }
 
-.catalog-filter-item {
-  margin-bottom: 16px;
+.catalog-filter-item:not(:last-child) {
+  margin-bottom: 13px;
 }
 
 .catalog-filter-label {
@@ -1062,8 +1087,8 @@ body {
 .range-input {
   box-sizing: border-box;
   width: 143px;
-  margin-bottom: 32px;
-  padding: 14px 34px 11px 19px;
+  margin-bottom: 29px;
+  padding: 13px 35px 11px 19px;
   font: inherit;
   font-size: 18px;
   line-height: 23px;
@@ -1120,7 +1145,7 @@ body {
 
 .toggle-max {
   top: -8px;
-  right: 0;
+  right: -8px;
 }
 
 .range-toggle:hover {
@@ -1136,13 +1161,13 @@ body {
   border: 2px solid #83b3d3;
   box-shadow: 0px 7px 15px rgba(0, 0, 0, 0.4);
 }
-/* в мозилле они не убрались. надо как-то специально их? */
+
 .range-input::-webkit-inner-spin-button,
 .range-input::-webkit-outer-spin-button {
   appearance: none;
   margin: 0;
 }
-/*так правильно?*/
+
 .range-input {
   -moz-appearance: textfield;
 }
@@ -1150,16 +1175,16 @@ body {
 .filter-buttons {
   display: flex;
   flex-direction: column;
-  padding-top: 55px;
+  padding-top: 61px;
 }
 
 .apply-button {
   box-sizing: border-box;
   font-weight: 700;
   width: 160px;
-  height: 48px;
   margin-bottom: 20px;
-  padding: 12px 10px;
+  padding: 15px 30px;
+  line-height: 20px;
   border: none;
   border-radius: 4px;
   background: #83B3D3;
@@ -1206,15 +1231,18 @@ body {
 
 .search-results-filter {
   display: flex;
-  margin: 0 72px 53px 71px;
+  flex-wrap: wrap;
+  margin: 44px 72px 45px 71px;
 
 }
 
 .select-control {
   width: 287px;
-  margin-left: auto;
-  margin-right: 80px;
-  padding: 13px 19px;
+  box-sizing: border-box;
+  margin-left: 192px;
+  margin-right: 24px;
+  margin-bottom: 8px;
+  padding: 10px 19px;
   font: inherit;
   font-size: 18px;
   line-height: 23px;
@@ -1249,12 +1277,21 @@ body {
   text-transform: uppercase;
 }
 
+.card-toggle-block {
+  display: flex;
+  width: 216px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
 .card-grid-toggle {
   display: flex;
+  box-sizing: border-box;
   align-items: center;
   justify-content: center;
   width: 48px;
   height: 48px;
+  margin-bottom: 8px;
   border: 2px solid #e6e6e6;
   border-radius: 4px;
 }
@@ -1281,8 +1318,8 @@ body {
 
   display: grid;
   grid-template-columns: 340px 340px 340px;
-  column-gap: 20px;
-  row-gap: 18px;
+  column-gap: 18px;
+  row-gap: 10px;
 
   list-style-type: none;
   margin: 0;
@@ -1306,11 +1343,11 @@ body {
 
 .hotel-card-info {
   display: grid;
-  grid-template-columns: 137px 137px;
+  grid-template-columns: 133px 141px;
   grid-template-areas: "title title"
     "hotel price"
     "descr-button favour-button";
-  gap: 16px 25px;
+  gap: 16px 26px;
   justify-items: start;
   margin-top: 16px;
 }
@@ -1325,17 +1362,22 @@ body {
 
 .search-results-type {
   grid-area: hotel;
+  font-size: 18px;
+  line-height: 23px;
 }
 
 .hotel-price {
   grid-area: price;
+  font-size: 18px;
+  line-height: 23px;
 }
 
 .hotel-description-button {
   grid-area: descr-button;
   display: block;
+  box-sizing: border-box;
   width: 133px;
-  padding: 9px 0;
+  padding: 8px 0;
   background: #756257;
   text-decoration: none;
   border-radius: 4px;
@@ -1345,8 +1387,8 @@ body {
 .button-favorites {
   grid-area: favour-button;
   display: block;
-  width: 137px;
-  padding: 9px 0;
+  width: 141px;
+  padding: 8px 0;
   background: #83B3D3;
   border-radius: 4px;
   border: none;
@@ -1363,14 +1405,22 @@ body {
 }
 
 .rating-star {
-  min-width: 36px;
-  padding: 10px 0;
+  display: flex;
+  max-width: 140px;
+  padding: 8px 0;
+  padding-top: 11px;
+}
+
+.evaluation-star-image {
+  display: block;
+  margin-right: 7px;
 }
 
 .rating {
+  display: block;
+  box-sizing: border-box;
   max-width: 160px;
-
-  padding: 10px 33px;
+  padding: 8px 32px;
   font-size: 16px;
   line-height: 21px;
   text-align: center;
@@ -1405,22 +1455,18 @@ body {
 
 .navigation-link-current {
   position: relative;
-  padding: 19px 12px;
 }
 
 .navigation-link-current::after {
   content: "";
-  width: 80%;
+  width: 70%;
   height: 2px;
   position: absolute;
-  bottom: -2px;
-  left: 10%;
+  bottom: 0px;
+  left: 15%;
   background-color: #756257;
+  z-index: 3;
 }
-
-
-
-
 
 .button-favorites:focus {
   background: #68A2CA;
@@ -1537,13 +1583,20 @@ body {
   display: flex;
   width: 1056px;
   margin: 0 auto;
+  justify-content: space-between;
 }
 
 .pagination {
   display: flex;
+  flex-wrap: wrap;
+  max-width: 670px;
   margin: 0;
   padding: 0;
   list-style-type: none;
+}
+
+.pagination-item {
+  margin-bottom: 8px;
 }
 
 .pagination-item:not(:last-child) {
@@ -1552,31 +1605,33 @@ body {
 
 .show-more-button {
   margin-top: 34px;
-  margin-bottom: 30px;
+  margin-bottom: 29px;
   padding-top: 30px;
   padding-bottom: 30px;
   border: 1px solid #e5e5e5;
   border-left: none;
   border-right: none;
-  cursor: pointer;
+
 }
 
 .pagination-show-more {
   width: 620px;
-  padding: 17px 0;
+  padding: 17px 225px;
+  font-family: "PT Sans";
   font-weight: 700;
   font-size: 20px;
   line-height: 26px;
   background: #83B3D3;
   border: none;
   border-radius: 4px;
+  cursor: pointer;
 }
 
 .pagination-link {
   display: block;
   box-sizing: border-box;
-  width: 55px;
-  height: 55px;
+  min-width: 55px;
+  min-height: 55px;
   padding: 15px 15px;
   font-weight: 700;
   font-size: 20px;
@@ -1609,7 +1664,10 @@ body {
 }
 
 .quantity-items-filter {
-  margin-left: auto;
+  display: flex;
+  max-width: 388px;
+  margin-bottom: 8px;
+  align-items: center;
 }
 
 .quantity-items {
@@ -1619,7 +1677,7 @@ body {
 
 .number-of-items {
   width: 160px;
-  margin-left: 51px;
+  margin-left: 50px;
   padding: 10px 17px;
   padding-right: 100px;
   font: inherit;
@@ -1647,7 +1705,7 @@ body {
 }
 
 .newsletter-inner {
-  margin-top: 73px;
+  margin-top: 64px;
   margin-bottom: 140px;
   background: #ffffff;
 }
