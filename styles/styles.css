@@ -212,6 +212,7 @@ body {
   margin-bottom: 80px;
   font-size: 22px;
   line-height: 36px;
+  color: #333333;
 }
 
 .advantages-list {
@@ -245,6 +246,10 @@ body {
 
 .advantages-item:first-child .advantages-description {
   margin: 0 90px 87px;
+}
+
+.advantages-item:not(:first-child):not(:nth-child(7)) .advantages-description {
+  color: #333333;
 }
 
 .advantages-description {
@@ -303,7 +308,6 @@ body {
 .advantages-item:nth-child(9) .advantages-description,
 .advantages-item:nth-child(10) .advantages-description {
   margin-bottom: 108px;
-
 }
 
 .favour {
@@ -327,6 +331,7 @@ body {
   margin-bottom: 56px;
   font-size: 22px;
   line-height: 26px;
+  color: #333333;
 }
 
 .favour-catalog-link {
@@ -337,6 +342,7 @@ body {
   margin: 2px auto 0;
   color: #ffffff;
   text-decoration: none;
+  font-weight: 700;
   font-size: 20px;
   line-height: 36px;
   text-align: center;
@@ -415,6 +421,10 @@ body {
   cursor: pointer;
 }
 
+.field:hover {
+  background-color: #e6e6e6;
+}
+
 .field:focus {
   outline: 3px solid #83b3d3;
   background: #e6e6e6;
@@ -450,7 +460,7 @@ body {
 
 .newsletter-button:active {
   background: #68a2ca;
-  opacity: 0.3;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .page-footer-container {
@@ -546,7 +556,10 @@ body {
 }
 
 .footer-contacts-phone {
-  display: block;
+  box-sizing: border-box;
+  width: 370px;
+  margin: auto;
+  padding: 5px;
   color: #000000;
   font-size: 40px;
   line-height: 40px;
@@ -562,7 +575,7 @@ body {
 .footer-contacts-phone:focus {
   color: #756257;
   outline: 3px solid #83b3d3;
-  border-radius: 4px;
+  border-radius: 10px;
 }
 
 .footer-contacts-phone:active {
@@ -815,6 +828,8 @@ body {
   font-weight: 700;
   font-size: 20px;
   line-height: 40px;
+  text-transform: uppercase;
+  color: #ffffff;
   border: none;
   border-radius: 10px;
   background-color: #83b3d3;
@@ -831,7 +846,7 @@ body {
 }
 
 .search-button:active {
-  opacity: 0.3;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .tooltip {
@@ -915,7 +930,7 @@ body {
 }
 
 .sorting-container {
-  padding: 45px 72px 80px 71px;
+  padding: 35px 72px 80px 71px;
   color: #ffffff;
   font-size: 18px;
   line-height: 23px;
@@ -929,7 +944,7 @@ body {
   margin: 0;
   font-weight: 700;
   font-size: 60px;
-  line-height: 58px;
+  line-height: 78px;
   text-transform: capitalize;
   text-align: left;
   color: #ffffff;
@@ -938,6 +953,7 @@ body {
 .breadcrumps {
   display: flex;
   margin: 0;
+  margin-top: -10px;
   padding: 0;
   list-style-type: none;
 }
@@ -1039,7 +1055,7 @@ body {
   background: rgba(255, 255, 255, 0.6);
 }
 
-.control:focus>.control-input+.control-mark {
+.control-input:focus+.control-mark {
   background: rgba(255, 255, 255, 0.6);
   outline: 3px solid #83b3d3;
 }
@@ -1170,6 +1186,7 @@ body {
 
 .range-bar {
   position: absolute;
+  width: 227px;
   height: 4px;
   background-color: #ffffff;
 }
@@ -1225,11 +1242,11 @@ body {
 
 .apply-button {
   box-sizing: border-box;
-  font-weight: 700;
   width: 160px;
   margin-bottom: 20px;
   padding: 15px 30px;
-  line-height: 20px;
+  font-weight: 700;
+  line-height: 21px;
   border: none;
   border-radius: 4px;
   background: #83B3D3;
@@ -1254,6 +1271,9 @@ body {
 .reset-button {
   border: none;
   background: none;
+  font-size: 18px;
+  line-height: 23px;
+  color: #ffffff;
   text-transform: capitalize;
   cursor: pointer;
 }
@@ -1421,12 +1441,14 @@ body {
   grid-area: hotel;
   font-size: 18px;
   line-height: 23px;
+  color: #333333;
 }
 
 .hotel-price {
   grid-area: price;
   font-size: 18px;
   line-height: 23px;
+  color: #333333;
 }
 
 .hotel-description-button {
@@ -1464,6 +1486,7 @@ body {
   background: #83B3D3;
   border-radius: 4px;
   border: none;
+  cursor: pointer;
 }
 
 .button-favorites:focus {
@@ -1637,6 +1660,20 @@ body {
   cursor: pointer;
 }
 
+.pagination-show-more:hover {
+  background-color: #68a2ca;
+}
+
+.pagination-show-more:focus {
+  background-color: #68a2ca;
+  outline: 3px solid #756257;
+}
+
+.pagination-show-more:active {
+  background-color: #68a2ca;
+  color: rgba(255, 255, 255, 0.3);
+}
+
 .pagination-link {
   display: block;
   box-sizing: border-box;
@@ -1670,7 +1707,7 @@ body {
 
 .pagination-link:active {
   background-color: #68a2ca;
-  opacity: 0.3;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .quantity-items-filter {
@@ -1683,6 +1720,7 @@ body {
 .quantity-items {
   font-size: 18px;
   line-height: 23px;
+  color: #333333;
 }
 
 .number-of-items {
@@ -1694,6 +1732,7 @@ body {
   font-weight: 400;
   font-size: 18px;
   line-height: 23px;
+  color: #333333;
   border: 2px solid #e6e6e6;
   border-radius: 4px;
   background-color: #ffffff;
